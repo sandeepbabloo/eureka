@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<meta name="author" content="Sandeep Kosuri">
+	<meta name="Description" content="Eureka is Asia's Largest B-Model Competition">
+
+	<title>Eureka! 2018</title>
+	<style>
+		/*h1{
+			width: 100%;
+			top: 0px;
+			padding: 0;
+			margin: 0;
+			position : fixed;
+		}*/
+
+		/*h2{
+			width: 100%;
+			top: 0px;
+			padding: 0;
+			margin: 0;
+		}*/
+		li{
+			float:right;
+			padding:15px;
+			/*padding-bottom: 0px;*/
+			color:#d1d3ce;
+			/*background-color:#222e3c;*/
+			font-size: 15px;
+			cursor:pointer;
+		}
+		li a{
+			color:#d1d3ce;
+		}
+		li a:hover{
+			color:#d07f40;
+		}
+		.non{
+			margin-top:7.5px;
+			margin-left:7.5px;
+			margin-right:7.5px;
+			padding:5px;
+			border-radius:5px;
+			border:2px solid #d1d3ce;
+		}
+		li:hover{
+			color:#d07f40;
+			/*padding-bottom:0px;*/
+		}
+		.dot{
+			display:none;
+			margin:0px;
+			font-size:20px;
+			padding:0px;
+		}
+		.head{
+			box-shadow: 0px 4px  rgba(0, 0, 0, 0.2);
+			width:100%;
+			position:fixed;
+			margin:0px;
+			/*height:100vh;*/
+			z-index:100;
+		}
+		.heading{
+			/*background-color:#222e3c;*/
+			/*width:100%;*/
+			color:#d1d3ce;
+			box-shadow: 0px 4px  rgba(0, 0, 0, 0.2);
+			padding-top:3px;
+			padding-bottom:0px;
+		}
+		.heading_inside{
+			margin-left:100px;
+			font-size:35px;
+			float:left;
+			padding-right:20px;
+		}
+		.tablist{
+			border: 2px solid #d1d3ce;
+			text-align:center;
+			font-size:16px;
+			color:#d1d3ce;
+		}
+		th{
+			padding:8px;
+			border-bottom: 2px solid #d1d3ce;
+			cursor:pointer;
+			position:relative;
+		}
+		th:hover{
+			background-color: #d07f40;
+		}
+		.parts{
+			border: 2px solid #d1d3ce;
+		}
+		.options{
+			display:none;
+			background-color:#e7a54f;
+		}
+		.matter{
+			border: 2px solid #d1d3ce;
+			height:500px;
+		}
+		.tabs{
+			z-index:1;
+			padding-bottom:20px;
+		}
+		.stats{
+			background-color:#e7a54f;
+		}
+		.stats_style{
+			background-color:#d1d3ce;
+		}
+		.stats_parts{
+			padding-top:15px;
+			padding-bottom:15px;
+			font-size:80px;
+			color:#d1d3ce;
+			text-shadow:40px 40px #d07f40;
+		}
+		.stats_names{
+			/*padding-top:15px;
+			padding-bottom:15px;*/
+			font-size:20px;
+			color:black;
+			/*text-shadow:40px 40px #d07f40;*/
+			text-align:center;
+		}
+		.incent_part{
+			width:80%;
+			box-shadow: 5px 5px #151c24;
+			cursor:pointer;
+		}
+		.incent_part:hover{
+			box-shadow: 10px 10px #151c24;
+			transition-duration:0.5s;
+		}
+		.about_names{
+			color:#d1d3ce;
+			font-size:60px;
+			text-align:center;
+		}
+		.about_des{
+			color:black;
+			font-size:14px;
+			padding:5px;
+			/*text-align:center;*/
+		}
+		.personal_details{
+			color:#d1d3ce;
+			text-align:center;
+		}
+		.input{
+			border-radius:3px;
+			background-color:#222e3c;
+			border: 1px solid #d1d3ce;
+			margin-bottom:15px;
+		}
+		.main{
+			background-image:url('eureka_cover.jpg');
+			background-size:cover;
+			z-index:200;
+			width:100%;
+			height:110vh;
+			border:0px solid black;
+		}
+		.about{
+			box-shadow:	5px 5px #151c24;
+			cursor:pointer;
+		}
+		.about:hover{
+			box-shadow:	10px 10px #151c24;
+		}
+		.manager_pic{
+			box-shadow:	5px 5px #151c24;
+			margin-bottom:5px;
+			cursor:pointer;
+		}
+		.manager_pic:hover{
+			box-shadow:	8px 8px #151c24;
+		}
+		.but2,.but1{
+			background-color:#222e3c;
+			border-radius:5px;
+			border:2px solid #d1d3ce; 
+			margin-top:384px;
+			color:#d1d3ce;
+			font-size:18px;
+		}
+		.but1{
+			padding-left: 45px;
+    		padding-right: 45.5px;
+    		margin-left: 152.1px;
+    		padding-top: 5px;
+    		padding-bottom: 6px;
+		}
+		.but2{
+			margin-left: 30px;
+    		padding-left: 40px;
+    		padding-right: 40px;
+    		padding-top: 5px;
+    		padding-bottom: 5px;
+		}
+    </style>
+</head>
+<body style="background-color:#222e3c;">
+
+	<header>
+			<div class="head row" style="background-color:#222e3c;margin-right:0px">
+				<ul type="none">
+					<li class="part">About Us<div class="dot" style="text-align:center">.</div></li>
+					<li>Sponsors</li>
+					<li class="non"><a href="https://ecell.in/eureka_junior">Eureka! Junior</a></li>
+					<li class="non"><a href="https://ecell.in/illuminate" target="_blank">Illuminate</a></li>
+					<li>Incentives</li>
+					<li>Competition</li>
+					<li>Home</li>
+				</ul>
+		    </div>
+		    <!-- <img src="boost1.jpg" style="width:100%"> -->
+	</header>
+
+	<div class="main" >
+			<button class="but1">Login</button>
+			<button class="but2">Register</button>
+	</div>
+
+	<div class="heading">
+		<h2 class="heading_inside">Competition</h2>
+		<img src="small.jpg">
+	</div>
+
+	<div class="tabs">
+	<div class="col-md-12" style="margin-top:20px">
+		<div class="row">
+		<div class="content col-md-2 col-md-offset-1">
+			<table class="tablist">
+					<tr class="structure"><th>Structure</th></tr>
+					<div class="separate">
+					<tr class="options"><th>Timeline</th></tr>
+					<tr class="options"><th>Tracks&Awards</th></tr>
+				    </div>
+					<tr><th>Eligibility</th></tr>
+					<tr><th>Rules</th></tr>
+					<tr><th>FAQ's</th></tr>
+					<tr><th>Terms & Conditions</th></tr>
+					<tr><th>Past 18 years</th></tr>
+					<tr><th>Success Stories</th></tr>	
+			</table>	
+		</div>
+			<div class="matter col-md-8">
+				<h3 style="text-align:center;color:#d1d3ce"> Eureka Portal is going to be launched on 25th August</h3>
+			<div class="col-md-2">
+				<!-- <img src="Eureka.jpg" height="100px" > -->
+			</div>
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-2">
+			</div>		
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="stats col-md-12" style="margin-top:25px">
+		<div class="col-md-offset-2 col-md-3 stats_parts">
+			<p><b>9100</b></p>
+		</div>
+		<div class="col-md-2 stats_parts">
+			<p><b>150</b></p>
+		</div>
+		<div class="col-md-2 stats_parts">
+			<p><b>15</b></p>
+		</div>
+		<div class="col-md-2 stats_parts">
+			<p><b>90</b></p>
+		</div>
+	</div>
+
+	<div class="stats_style col-md-12" style="margin-bottom:40px">
+		<div class="col-md-offset-2 col-md-3 stats_names">
+			<p><b>Entries(Last year)</b></p>
+		</div>
+		<div class="col-md-2 stats_names">
+			<p><b>Mentors</b></p>
+		</div>
+		<div class="col-md-2 stats_names">
+			<p><b>Lacs of Prize Money</b></p>
+		</div>
+		<div class="col-md-2 stats_names">
+			<p><b>Years</b></p>
+		</div>
+	</div>
+
+	<div class="heading">
+		<div class="row">
+			<h2 class="heading_inside">Incentives</h2>
+			<img src="small2.jpg">
+		</div>
+	</div>
+
+	<div class="container" style="margin-top:20px">
+	<div class="col-md-12" >
+		<div class="row">
+			<div class="col-md-3" style="margin-bottom:30px">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="heading">
+		<h2 class="heading_inside">About Us</h2>
+		<img src="small.jpg">
+	</div>
+
+	<div class="container" style="margin-top:20px">
+	<div class="col-md-12">
+
+	<div class="row about" style="margin-bottom:30px">
+		<div class="col-md-3" style="background-color:#e7a54f">
+			<h3 class="about_names" style="padding:9px;"><b>What is Eureka?</b></h3>
+		</div>
+		<div class="col-md-9" style="background-color:#d1d3ce">
+			<p class="about_des" >Instated to foster the spirit of entrepreneurship and business acumen among people all around the world , Eureka! fast-tracks the journey from an innovative idea to a commercial success. Eureka! is Asia's largest business model competition accredited independently by CNN and Thomson Reuters. Designed to emulate the process of growth of an idea towards a full-fledged startup. Eureka! prides itself on providing a 360 degree, holistic experience in the 5 month period that it spans. Right from acknowledging that your idea has a potential, to drafting a B-Model and pitching in front of an esteemed panel of investors, this platform has it all! Over the 17 years of its existence, Eureka! has grown from a competition in which 50 teams competed for INR 50,000 to a competition which sees over 8000 entries competing for prizes worth INR 5 Million at stake with excellent networking opportunities in India and the Silicon Valley !</p>
+		</div>
+	</div>
+
+	<div class="row about">
+		<div class="col-md-3" style="background-color:#e7a54f">
+			<h3 class="about_names" style="padding:0px"><b>Our Vision</b></h3>
+		</div>
+		<div class="col-md-9" style="background-color:#d1d3ce">
+			<p class="about_des" style="padding:6px">Innovation and entrepreneurship are the wheels that steer the world into a brighter future. The world economy will tumble upon itself if new innovations are not reaped every day. Great ideas result into great undertakings which pave the way for glaring success. It is easier said than done because the process of realizing an idea needs a deep understanding of the world around, and an innate preparedness to cope with failures - an inevitable part of enterprising. In order to facilitate this vision of promoting entrepreneurship in India and the world, E-Cell organizes Eureka!, an international business model competition. Eureka! provides a platform for potential ideas and early stage startups to evaluate their plan in the risk free environment of a competition. It aims to bridge the gap between ideas and the realization of an enterprise.</p>
+		</div>
+	</div>
+    </div>
+	</div>
+
+	<div class="heading">
+		<h2 class="heading_inside">Contact Us</h2>
+		<img src="small2.jpg">
+	</div>
+
+	<div class="contact col-md-10 col-md-offset-1">
+		<div class="row">
+			<div class="col-md-7">
+				<h3 style="color:#d1d3ce">For any queries, contact:</h3>
+				<div class="col-md-4" >
+					<img class="manager_pic" src="kushal.jpg" width="150px">
+					<div class="personal_details">
+						<p style="color:">Kushal Agarwal</p>
+						<p style="color:">Events Head</p>
+						<img src="">
+						<p style="color:">+91-9163779100</p>
+						<p style="color:">kushal@ecell.in</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<img class="manager_pic" src="praveen.jpg" width="150px">
+					<div class="personal_details">
+						<p style="color:">Praveen Saran</p>
+						<p style="color:">Events Head</p>
+						<img src="">
+						<p style="color:">+91-8209722134</p>
+						<p style="color:">praveen_s@ecell.in</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<img class="manager_pic" src="sumitra.jpg" width="150px">
+					<div class="personal_details">
+						<p style="color:">Sumitra Charan</p>
+						<p style="color:">Events Head</p>
+						<img src="">
+						<p style="color:">+91-8291339497</p>
+						<p style="color:">sumitra@ecell.in</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-5">
+				<h3 style="color:#d1d3ce">Leave a Message</h3>
+				<!-- <form> -->
+					<input placeholder="Name" class="input row" name="name" size="30" height="100">
+					<input placeholder="Email" class="input row" size="30">
+					<input placeholder="Mobile" class="input row" size="30">
+					<input placeholder="Message" class="input row" size="30">
+				<!-- </form> -->
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="col-md-10 col-md-offset-1" style="background-color:#1b222c">
+			<img src="ecell_logo.png" style="margin-left:47%">
+			<p style="color:#d1d3ce;text-align:center"><b>The Entrepreneurship Cell,IIT Bombay</b></p>
+			<p style="color:#d1d3ce;text-align:center">E-Cell Office, Student Activity Centre, IIT Bombay, Mumbai-400076</p>
+		</div>
+	</div>
+	<script>
+		$(".part").mouseover(function(){
+			$(".dot").show();
+		});
+		$(".part").mouseout(function(){
+			$(".dot").hide();
+		});
+		$(".structure").mouseover(function(){
+			$(".options").fadeIn(300);
+		});
+		$(".options").mouseout(function(){
+			$(".options").hide();
+		});
+	</script>
+</body>
